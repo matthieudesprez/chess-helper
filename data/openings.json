@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Alekhine Defense",
+    "eco": "B02",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq",
+    "moves": "1. e4 Nf6"
+  },
+  {
+    "name": "Alekhine Defense, 2. e5 Nd5 3. d4",
+    "eco": "B03",
+    "fen": "rnbqkb1r/pppppppp/8/3nP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4"
+  },
+  {
+    "name": "Alekhine Defense, 2. e5 Nd5 3. d4 d6",
+    "eco": "B03",
+    "fen": "rnbqkb1r/ppp1pppp/3p4/3nP3/3P4/8/PPP2PPP/RNBQKBNR w KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6"
+  },
+  {
+    "name": "Alekhine Defense, 3. d4 d6 4. c4",
+    "eco": "B03",
+    "fen": "rnbqkb1r/ppp1pppp/3p4/3nP3/2PP4/8/PP3PPP/RNBQKBNR b KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4"
+  },
+  {
+    "name": "Alekhine Defense: Buckley Attack",
+    "eco": "B03",
+    "fen": "rnbqkb1r/pppppppp/8/3nP3/8/N7/PPPP1PPP/R1BQKBNR b KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. Na3"
+  },
+  {
+    "name": "Alekhine Defense: Four Pawns Attack",
+    "eco": "B03",
+    "fen": "rnbqkb1r/ppp1pppp/1n1p4/4P3/2PP1P2/8/PP4PP/RNBQKBNR b KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. f4"
+  },
+  {
+    "name": "Alekhine Defense: Four Pawns Attack, 6... Nc6",
+    "eco": "B03",
+    "fen": "r1bqkb1r/ppp1pppp/1nn5/4P3/2PP4/8/PP4PP/RNBQKBNR w KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. f4 dxe5 6. fxe5 Nc6"
+  },
+  {
+    "name": "Alekhine Defense: Four Pawns Attack, Cambridge Gambit",
+    "eco": "B03",
+    "fen": "rnbqkb1r/ppp1pp1p/1n1p4/4P1p1/2PP1P2/8/PP4PP/RNBQKBNR w KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. f4 g5"
+  },
+  {
+    "name": "Alekhine Defense: Four Pawns Attack, Main Line",
+    "eco": "B03",
+    "fen": "r1bqkb1r/ppp1pppp/1nn5/4P3/2PP4/4B3/PP4PP/RN1QKBNR b KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. f4 dxe5 6. fxe5 Nc6 7. Be3"
+  },
+  {
+    "name": "Alekhine Defense: Modern, Vitolins Attack",
+    "eco": "B05",
+    "fen": "rn1qkb1r/ppp1pppp/1n1p4/3PP3/2P3b1/5N2/PP3PPP/RNBQKB1R b KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Nf3 Bg4 5. c4 Nb6 6. d5"
+  },
+  {
+    "name": "Alekhine Defense: Mokele Mbembe",
+    "eco": "B02",
+    "fen": "rnbqkb1r/pppppppp/8/4P3/4n3/8/PPPP1PPP/RNBQKBNR w KQkq",
+    "moves": "1. e4 Nf6 2. e5 Ne4"
+  },
+  {
+    "name": "Alekhine Defense: Mokele Mbembe, Modern Line",
+    "eco": "B02",
+    "fen": "rnbqkb1r/ppppp1pp/5p2/4P3/3Pn3/8/PPP2PPP/RNBQKBNR w KQkq",
+    "moves": "1. e4 Nf6 2. e5 Ne4 3. d4 f6"
+  },
+  {
+    "name": "Alekhine Defense: Mokele Mbembe, Vavra Defense",
+    "eco": "B02",
+    "fen": "rnbqkb1r/pppp1ppp/4p3/4P3/3Pn3/8/PPP2PPP/RNBQKBNR w KQkq",
+    "moves": "1. e4 Nf6 2. e5 Ne4 3. d4 e6"
+  },
+  {
+    "name": "Alekhine Defense: O'Sullivan Gambit",
+    "eco": "B03",
+    "fen": "rnbqkb1r/p1pppppp/8/1p1nP3/3P4/8/PPP2PPP/RNBQKBNR w KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 b5"
+  },
+  {
+    "name": "Alekhine Defense: Saemisch Attack",
+    "eco": "B02",
+    "fen": "rnbqkb1r/pppppppp/8/3nP3/8/2N5/PPPP1PPP/R1BQKBNR b KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. Nc3"
+  },
+  {
+    "name": "Alekhine Defense: Spielmann Gambit",
+    "eco": "B02",
+    "fen": "rnbqkb1r/pppnpppp/4P3/3p4/8/2N5/PPPP1PPP/R1BQKBNR b KQkq",
+    "moves": "1. e4 Nf6 2. Nc3 d5 3. e5 Nfd7 4. e6"
+  },
+  {
+    "name": "Alekhine Defense: The Squirrel",
+    "eco": "B02",
+    "fen": "rnbqkb1r/pppppppp/8/4P3/2P2n2/8/PP1P1PPP/RNBQKBNR w KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. c4 Nf4"
+  },
+  {
+    "name": "Alekhine Defense: Two Pawn Attack",
+    "eco": "B02",
+    "fen": "rnbqkb1r/pppppppp/8/3nP3/2P5/8/PP1P1PPP/RNBQKBNR b KQkq",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. c4"
+  },
+  {
+    "name": "Amar Gambit",
+    "eco": "A00",
+    "fen": "rn1qkbnr/ppp2ppp/8/3p4/5p2/6PB/PPPPP2P/RNBQK2R w KQkq",
+    "moves": "1. Nh3 d5 2. g3 e5 3. f4 Bxh3 4. Bxh3 exf4"
+  },
+  {
+    "name": "Amar Opening",
+    "eco": "E00",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R b KQkq",
+    "moves": "1. Nh3"
+  },
+  {
+    "name": "Amar Opening: Gent Gambit",
+    "eco": "A00",
+    "fen": "rn1qkbnr/ppp2ppp/8/3p4/8/6PB/PPPPP3/RNBQ1RK1 b kq",
+    "moves": "1. Nh3 d5 2. g3 e5 3. f4 Bxh3 4. Bxh3 exf4 5. O-O fxg3 6. hxg3"
+  },
+  {
+    "name": "Amar Opening: Paris Gambit",
+    "eco": "A00",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/5P2/6PN/PPPPP2P/RNBQKB1R b KQkq",
+    "moves": "1. Nh3 d5 2. g3 e5 3. f4"
+  },
+  {
+    "name": "Amazon Attack",
+    "eco": "D00",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/3Q4/PPP1PPPP/RNB1KBNR b KQkq",
+    "moves": "1. d4 d5 2. Qd3"
+  },
+  {
+    "name": "Amazon Attack: Siberian Attack",
+    "eco": "D00",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/2NQ4/PPP1PPPP/R1B1KBNR b KQkq",
+    "moves": "1. d4 Nf6 2. Nc3 d5 3. Qd3"
+  },
+  {
+    "name": "Amsterdam Attack",
+    "eco": "A00",
+    "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2P5/1PN1P3/P2P1PPP/R1BQKBNR w KQkq",
+    "moves": "1. e3 e5 2. c4 d6 3. Nc3 Nc6 4. b3 Nf6"
+  },
+  {
+    "name": "Anderssen Opening",
+    "eco": "A00",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/P7/1PPPPPPP/RNBQKBNR b KQkq",
+    "moves": "1. a3"
+  },
+  {
+    "name": "Benko Gambit",
+    "eco": "A57",
+    "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5"
+  },
+  {
+    "name": "Benko Gambit, 8. Kxf1 d6 9. g3",
+    "eco": "A59",
+    "fen": "rn1qkb1r/4pp1p/3p1np1/2pP4/4P3/2N3P1/PP3P1P/R1BQ1KNR b kq",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 g6 6. Nc3 Bxa6 7. e4 Bxf1 8. Kxf1 d6 9. g3"
+  },
+  {
+    "name": "Danish Gambit Declined, Sorensen Defense",
+    "eco": "C21",
+    "fen": "rnbqkbnr/ppp2ppp/8/3p4/3pP3/2P5/PP3PPP/RNBQKBNR w KQkq",
+    "moves": "1. e4 e5 2. d4 exd4 3. c3 d5"
+  },
+  {
+    "name": "Queen's Gambit",
+    "eco": "D06",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq",
+    "moves": "1. d4 d5 2. c4"
+  }
+]
