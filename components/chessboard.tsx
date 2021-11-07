@@ -192,9 +192,6 @@ function Chessboard({fen}: ChessboardProps) {
                     <div key={index}>{index + 1}</div>
                 ))}
             </div>
-            <div>
-                Next move: {currentPlayer}
-            </div>
         </div>
     )
 }

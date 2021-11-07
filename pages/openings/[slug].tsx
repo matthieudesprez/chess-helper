@@ -10,7 +10,7 @@ import Link from "next/link";
 function Opening({opening}) {
     return (
         <div className={styles.main}>
-            <h2><Link href={`/openings`}>&lt;</Link> {opening.name}</h2>
+            <h2>{opening.name}</h2>
             <p>{opening.moves}</p>
             <Chessboard fen={opening.fen}/>
         </div>
