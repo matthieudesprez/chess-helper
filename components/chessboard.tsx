@@ -75,7 +75,7 @@ const mapIndexToRow = (index: number): Row => {
     }
 }
 
-const mapIndexToFile = (index: number): ChessboardFile => Math.floor(index / 8) + 1
+const mapIndexToFile = (index: number): ChessboardFile => Math.floor(index / 8) + 1 as ChessboardFile
 
 const mapIndexToCoordinates = (index: number): Coordinates => {
     return {
