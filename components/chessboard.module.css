@@ -1,0 +1,88 @@
+.chessboardContainer {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    position: relative;
+}
+
+.chessboard {
+    width: 100%;
+    height: 100%;
+}
+
+.chessboardRowsInfo {
+    width: 30px;
+    height: 640px;
+    position: absolute;
+    left: -30px;
+}
+.chessboardRowsInfo > div{
+    width: 20px;
+    height: 80px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    place-items: center;
+
+}
+.chessboardFilesInfo {
+    width: 640px;
+    height: 40px;
+    margin: auto;
+}
+.chessboardFilesInfo > div{
+    width: 80px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cell {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    color: #333;
+    font-size: 50px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    border: 1px solid black;
+}
+.cell svg {
+    /*--scale: 1;*/
+    /*fill: #fff;*/
+    --stroke: #000;
+    transform: translate(-25%, -25%) translateZ(0) scale(0.3);
+    /*transform: scale(0.5);*/
+    /*transform-origin: 50% 50%;*/
+    --transition-delay: 0ms;
+    --transition-duration: 200ms;
+    --transition-ease: cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform var(--transition-duration) var(--transition-ease), fill var(--transition-duration) var(--transition-ease), opacity var(--transition-duration) var(--transition-ease);
+    /*stroke-linejoin: round;*/
+}
+/*.cell svg.black {*/
+/*    fill: #000;*/
+/*    --stroke: #fff;*/
+/*}*/
+
+.cell:nth-child(16n+16),
+.cell:nth-child(16n+14),
+.cell:nth-child(16n+12),
+.cell:nth-child(16n+10),
+.cell:nth-child(16n+7),
+.cell:nth-child(16n+5),
+.cell:nth-child(16n+3),
+.cell:nth-child(16n+1){
+    background-color: #444;
+    color: #fff;
+}
+
+/*.cell:nth-child(8n+1){   */
+/*    clear:left;*/
+/*}*/

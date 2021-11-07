@@ -16,10 +16,6 @@ export default function Home() {
                     Welcome to Chess Helper
                 </h1>
 
-                <p className={styles.description}>
-                    Get started
-                </p>
-
                 <div className={styles.grid}>
                     <Link href="/openings">
                         <div className={styles.card}>
@@ -27,12 +23,12 @@ export default function Home() {
                             <p>Find in-depth information about all chess Openings.</p>
                         </div>
                     </Link>
-                    <Link href="/learning">
-                        <div className={styles.card}>
-                            <h2>Learn</h2>
-                            <p>Test yourself about chess openings through flash cards</p>
-                        </div>
-                    </Link>
+                    {/*<Link href="/learning">*/}
+                    {/*    <div className={styles.card}>*/}
+                    {/*        <h2>Learn</h2>*/}
+                    {/*        <p>Test yourself about chess openings through flash cards</p>*/}
+                    {/*    </div>*/}
+                    {/*</Link>*/}
                 </div>
             </main>
 

@@ -1,0 +1,10 @@
+.navbar {
+    display: flex;
+    align-items: center;
+}
+.navbar > div {
+    margin-left: 10px;
+}
+.navbarItem {
+    font-size: 1.5rem;
+}
