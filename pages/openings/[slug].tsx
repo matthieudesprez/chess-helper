@@ -11,8 +11,7 @@ function Opening({opening}) {
     return (
         <div className={styles.main}>
             <h2>{opening.name}</h2>
-            <p>{opening.moves}</p>
-            <Chessboard fen={opening.fen}/>
+            <Chessboard fen={opening.fen} moves={opening.moves}/>
         </div>
     )
 }

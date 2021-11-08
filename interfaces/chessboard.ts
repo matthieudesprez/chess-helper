@@ -4,28 +4,28 @@ export const enum Color {
 }
 
 export const enum Piece {
-    "Rook",
-    "Knight",
-    "Bishop",
-    "Queen",
-    "King",
-    "Pawn",
+    Rook = "Rook",
+    Knight = "Knight",
+    Bishop = "Bishop",
+    Queen = "Queen",
+    King = "King",
+    Pawn = "Pawn",
 }
 
-export const enum Row {
-    A = "A",
-    B = "B",
-    C = "C",
-    D = "D",
-    E = "E",
-    F = "F",
-    G = "G",
-    H = "H",
+export const enum ChessboardFile {
+    a = "a",
+    b = "b",
+    c = "c",
+    d = "d",
+    e = "e",
+    f = "f",
+    g = "g",
+    h = "h",
 }
 
-export type ChessboardFile = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+export type ChessboardRanks = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 
-export interface Coordinates {
-    row: Row;
+export interface ChessboardCoordinates {
     file: ChessboardFile;
+    rank: ChessboardRanks;
 }

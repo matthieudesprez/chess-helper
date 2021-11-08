@@ -1,13 +1,13 @@
 .chessboardContainer {
-    width: 640px;
-    height: 640px;
     margin: auto;
     position: relative;
+        width: 640px;
+
 }
 
 .chessboard {
     width: 100%;
-    height: 100%;
+    height: 640px;
 }
 
 .chessboardRowsInfo {
@@ -45,8 +45,8 @@
     float: left;
     width: 80px;
     height: 80px;
-    background-color: #fff;
-    color: #333;
+    background-color: #444;
+    color: #fff;
     font-size: 50px;
     text-align: center;
     display: table-cell;
@@ -54,22 +54,22 @@
     border: 1px solid black;
 }
 .cell svg {
-    /*--scale: 1;*/
-    /*fill: #fff;*/
     --stroke: #000;
     transform: translate(-25%, -25%) translateZ(0) scale(0.3);
-    /*transform: scale(0.5);*/
-    /*transform-origin: 50% 50%;*/
     --transition-delay: 0ms;
     --transition-duration: 200ms;
     --transition-ease: cubic-bezier(0.25, 1, 0.5, 1);
     transition: transform var(--transition-duration) var(--transition-ease), fill var(--transition-duration) var(--transition-ease), opacity var(--transition-duration) var(--transition-ease);
-    /*stroke-linejoin: round;*/
 }
-/*.cell svg.black {*/
-/*    fill: #000;*/
-/*    --stroke: #fff;*/
-/*}*/
+
+.whiteSvg {
+    fill: #fff;
+    --stroke: #000 !important;
+}
+.blackSvg {
+    fill: #000;
+    --stroke: #fff !important;
+}
 
 .cell:nth-child(16n+16),
 .cell:nth-child(16n+14),
@@ -79,10 +79,27 @@
 .cell:nth-child(16n+5),
 .cell:nth-child(16n+3),
 .cell:nth-child(16n+1){
-    background-color: #444;
-    color: #fff;
+    background-color: #ddd;
+    color: #333;
 }
 
-/*.cell:nth-child(8n+1){   */
-/*    clear:left;*/
-/*}*/
+.movesHistory {
+    min-height: 4rem;
+    padding: 1rem;
+}
+
+.historyNavigation {
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+.historyNavigation button {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    background: none;
+    color: white;
+    border: 0 none;
+    cursor: pointer;
+}
+.historyNavigation button:disabled {
+    opacity: 0.5;
+}
