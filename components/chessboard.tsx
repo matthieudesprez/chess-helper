@@ -185,14 +185,14 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
         })).filter(piece => !!piece && piece.color === color && piece.pieceName === pieceName)
 
         if (matchingCoordinates.length === 1) {
-            previousFile = matchingCoordinates[0].coordinates[0] as ChessboardFile
-            previousRank = parseInt(matchingCoordinates[0].coordinates[1]) as ChessboardRanks
+            previousFile = matchingCoordinates[0]?.coordinates[0] as ChessboardFile
+            previousRank = parseInt(matchingCoordinates[0]?.coordinates[1]) as ChessboardRanks
         } else {
             // should have additional info from txt to decide
             if (previousKnownFile) {
-                previousRank = parseInt(matchingCoordinates.find(p => p.coordinates[0] === previousKnownFile).coordinates[1])
+                previousRank = parseInt(matchingCoordinates.find(p => p?.coordinates[0] === previousKnownFile)?.coordinates[1])
             } else if (previousKnownRank) {
-                previousFile = matchingCoordinates.find(p => parseInt(p.coordinates[1]) === previousRank).coordinates[0] as ChessboardFile
+                previousFile = matchingCoordinates.find(p => parseInt(p?.coordinates[1]) === previousRank)?.coordinates[0] as ChessboardFile
             }
         }
     } else if (pieceName === Piece.Bishop) {
@@ -201,14 +201,14 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
             ...previousState[coordinates], coordinates
         })).filter(piece => !!piece && piece.color === color && piece.pieceName === pieceName)
         if (matchingCoordinates.length === 1) {
-            previousFile = matchingCoordinates[0].coordinates[0] as ChessboardFile
-            previousRank = parseInt(matchingCoordinates[0].coordinates[1]) as ChessboardRanks
+            previousFile = matchingCoordinates[0]?.coordinates[0] as ChessboardFile
+            previousRank = parseInt(matchingCoordinates[0]?.coordinates[1]) as ChessboardRanks
         } else {
             // should have additional info from txt to decide
             if (previousKnownFile) {
-                previousRank = parseInt(matchingCoordinates.find(p => p.coordinates[0] === previousKnownFile).coordinates[1])
+                previousRank = parseInt(matchingCoordinates.find(p => p?.coordinates[0] === previousKnownFile)?.coordinates[1])
             } else if (previousKnownRank) {
-                previousFile = matchingCoordinates.find(p => parseInt(p.coordinates[1]) === previousRank).coordinates[0] as ChessboardFile
+                previousFile = matchingCoordinates.find(p => parseInt(p?.coordinates[1]) === previousRank)?.coordinates[0] as ChessboardFile
             }
         }
     } else if (pieceName === Piece.Rook) {
@@ -218,14 +218,14 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
             return {...piece, coordinates}
         })
         if (matchingCoordinates.length === 1) {
-            previousFile = matchingCoordinates[0].coordinates[0] as ChessboardFile
-            previousRank = parseInt(matchingCoordinates[0].coordinates[1]) as ChessboardRanks
+            previousFile = matchingCoordinates[0]?.coordinates[0] as ChessboardFile
+            previousRank = parseInt(matchingCoordinates[0]?.coordinates[1]) as ChessboardRanks
         } else {
             // should have additional info from txt to decide
             if (previousKnownFile) {
-                previousRank = parseInt(matchingCoordinates.find(p => p.coordinates[0] === previousKnownFile).coordinates[1])
+                previousRank = parseInt(matchingCoordinates.find(p => p?.coordinates[0] === previousKnownFile)?.coordinates[1])
             } else if (previousKnownRank) {
-                previousFile = matchingCoordinates.find(p => parseInt(p.coordinates[1]) === previousRank).coordinates[0] as ChessboardFile
+                previousFile = matchingCoordinates.find(p => parseInt(p?.coordinates[1]) === previousRank)?.coordinates[0] as ChessboardFile
             } else {
                 // determine which rook based on the presence of obstacle
 
@@ -238,14 +238,14 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
             return {...piece, coordinates}
         })
         if (matchingCoordinates.length === 1) {
-            previousFile = matchingCoordinates[0].coordinates[0] as ChessboardFile
-            previousRank = parseInt(matchingCoordinates[0].coordinates[1]) as ChessboardRanks
+            previousFile = matchingCoordinates[0]?.coordinates[0] as ChessboardFile
+            previousRank = parseInt(matchingCoordinates[0]?.coordinates[1]) as ChessboardRanks
         } else {
             // should have additional info from txt to decide
             if (previousKnownFile) {
-                previousRank = parseInt(matchingCoordinates.find(p => p.coordinates[0] === previousKnownFile).coordinates[1])
+                previousRank = parseInt(matchingCoordinates.find(p => p?.coordinates[0] === previousKnownFile)?.coordinates[1])
             } else if (previousKnownRank) {
-                previousFile = matchingCoordinates.find(p => parseInt(p.coordinates[1]) === previousRank).coordinates[0] as ChessboardFile
+                previousFile = matchingCoordinates.find(p => parseInt(p?.coordinates[1]) === previousRank)?.coordinates[0] as ChessboardFile
             }
         }
     } else if (pieceName === Piece.King) {
@@ -254,8 +254,8 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
         }).map(([coordinates, piece], index) => {
             return {...piece, coordinates}
         })
-        previousFile = matchingCoordinates[0].coordinates[0] as ChessboardFile
-        previousRank = parseInt(matchingCoordinates[0].coordinates[1]) as ChessboardRanks
+        previousFile = matchingCoordinates[0]?.coordinates[0] as ChessboardFile
+        previousRank = parseInt(matchingCoordinates[0]?.coordinates[1]) as ChessboardRanks
     }
     return {
         file: previousFile as ChessboardFile,
