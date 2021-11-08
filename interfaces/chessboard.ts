@@ -29,3 +29,16 @@ export interface ChessboardCoordinates {
     file: ChessboardFile;
     rank: ChessboardRanks;
 }
+
+export declare type ChessboardProps = {
+    fen?: string;
+    moves?: string;
+};
+
+export interface ChessboardPiece {
+    color: Color;
+    pieceName: Piece;
+    component: (any) => JSX.Element
+}
+
+export type ChessboardState = { [key: string]: ChessboardPiece }
