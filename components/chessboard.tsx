@@ -199,7 +199,7 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
         const possiblePreviousCoordinates = whiteSquareCoordinates.includes(`${newFile}${newRank}`) ? whiteSquareCoordinates : blackSquareCoordinates
         const matchingCoordinates = possiblePreviousCoordinates.map(coordinates => ({
             ...previousState[coordinates], coordinates
-        })).filter(piece => piece.color === color && piece.pieceName === pieceName)
+        })).filter(piece => !!piece && piece.color === color && piece.pieceName === pieceName)
         if (matchingCoordinates.length === 1) {
             previousFile = matchingCoordinates[0].coordinates[0] as ChessboardFile
             previousRank = parseInt(matchingCoordinates[0].coordinates[1]) as ChessboardRanks
@@ -213,7 +213,7 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
         }
     } else if (pieceName === Piece.Rook) {
         const matchingCoordinates = Object.entries(previousState).filter(([coordinates, piece], index) => {
-            return piece.color === color && piece.pieceName === pieceName && (coordinates[0] === newFile || parseInt(coordinates[1]) === newRank)
+            return !!piece && piece.color === color && piece.pieceName === pieceName && (coordinates[0] === newFile || parseInt(coordinates[1]) === newRank)
         }).map(([coordinates, piece], index) => {
             return {...piece, coordinates}
         })
@@ -233,7 +233,7 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
         }
     } else if (pieceName === Piece.Queen) {
         const matchingCoordinates = Object.entries(previousState).filter(([coordinates, piece], index) => {
-            return piece && piece.color === color && piece.pieceName === pieceName
+            return !!piece && piece.color === color && piece.pieceName === pieceName
         }).map(([coordinates, piece], index) => {
             return {...piece, coordinates}
         })
@@ -250,7 +250,7 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
         }
     } else if (pieceName === Piece.King) {
         const matchingCoordinates = Object.entries(previousState).filter(([coordinates, piece], index) => {
-            return piece.color === color && piece.pieceName === pieceName
+            return piece && piece.color === color && piece.pieceName === pieceName
         }).map(([coordinates, piece], index) => {
             return {...piece, coordinates}
         })
