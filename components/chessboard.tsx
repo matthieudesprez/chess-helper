@@ -159,7 +159,7 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
                 previousRank = newRank + 1
             }
             // previousKnownFile will most likely be provided
-            previousFile = previousKnownFile || previousState[`${numberToFile(newFileNumber - 1)}${previousRank}`] ? numberToFile(newFileNumber - 1) : numberToFile(newFileNumber + 1)
+            previousFile = previousKnownFile // || previousState[`${numberToFile(newFileNumber - 1)}${previousRank}`] ? numberToFile(newFileNumber - 1) : numberToFile(newFileNumber + 1)
         } else {
             previousFile = newFile
             if (color === Color.White) {
@@ -189,18 +189,27 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
             previousRank = parseInt(matchingCoordinates[0].coordinates[1]) as ChessboardRanks
         } else {
             // should have additional info from txt to decide
+            if (previousKnownFile) {
+                previousRank = parseInt(matchingCoordinates.find(p => p.coordinates[0] === previousKnownFile).coordinates[1])
+            } else if (previousKnownRank) {
+                previousFile = matchingCoordinates.find(p => parseInt(p.coordinates[1]) === previousRank).coordinates[0] as ChessboardFile
+            }
         }
     } else if (pieceName === Piece.Bishop) {
         const possiblePreviousCoordinates = whiteSquareCoordinates.includes(`${newFile}${newRank}`) ? whiteSquareCoordinates : blackSquareCoordinates
         const matchingCoordinates = possiblePreviousCoordinates.map(coordinates => ({
             ...previousState[coordinates], coordinates
-        })).filter(piece => !!piece && piece.color === color && piece.pieceName === pieceName)
-        console.log(matchingCoordinates);
+        })).filter(piece => piece.color === color && piece.pieceName === pieceName)
         if (matchingCoordinates.length === 1) {
             previousFile = matchingCoordinates[0].coordinates[0] as ChessboardFile
             previousRank = parseInt(matchingCoordinates[0].coordinates[1]) as ChessboardRanks
         } else {
             // should have additional info from txt to decide
+            if (previousKnownFile) {
+                previousRank = parseInt(matchingCoordinates.find(p => p.coordinates[0] === previousKnownFile).coordinates[1])
+            } else if (previousKnownRank) {
+                previousFile = matchingCoordinates.find(p => parseInt(p.coordinates[1]) === previousRank).coordinates[0] as ChessboardFile
+            }
         }
     } else if (pieceName === Piece.Rook) {
         const matchingCoordinates = Object.entries(previousState).filter(([coordinates, piece], index) => {
@@ -213,10 +222,18 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
             previousRank = parseInt(matchingCoordinates[0].coordinates[1]) as ChessboardRanks
         } else {
             // should have additional info from txt to decide
+            if (previousKnownFile) {
+                previousRank = parseInt(matchingCoordinates.find(p => p.coordinates[0] === previousKnownFile).coordinates[1])
+            } else if (previousKnownRank) {
+                previousFile = matchingCoordinates.find(p => parseInt(p.coordinates[1]) === previousRank).coordinates[0] as ChessboardFile
+            } else {
+                // determine which rook based on the presence of obstacle
+
+            }
         }
     } else if (pieceName === Piece.Queen) {
         const matchingCoordinates = Object.entries(previousState).filter(([coordinates, piece], index) => {
-            return piece.color === color && piece.pieceName === pieceName
+            return piece && piece.color === color && piece.pieceName === pieceName
         }).map(([coordinates, piece], index) => {
             return {...piece, coordinates}
         })
@@ -225,6 +242,11 @@ const getPreviousPiecePosition = (previousState: ChessboardState, pieceName: Pie
             previousRank = parseInt(matchingCoordinates[0].coordinates[1]) as ChessboardRanks
         } else {
             // should have additional info from txt to decide
+            if (previousKnownFile) {
+                previousRank = parseInt(matchingCoordinates.find(p => p.coordinates[0] === previousKnownFile).coordinates[1])
+            } else if (previousKnownRank) {
+                previousFile = matchingCoordinates.find(p => parseInt(p.coordinates[1]) === previousRank).coordinates[0] as ChessboardFile
+            }
         }
     } else if (pieceName === Piece.King) {
         const matchingCoordinates = Object.entries(previousState).filter(([coordinates, piece], index) => {
@@ -247,7 +269,6 @@ const historyToHistoryStates = (history: Array<string>): Array<ChessboardState> 
         const color = index % 2 === 0 ? Color.White : Color.Black
 
         const nextState = {...result[result.length - 1]}
-
         if (h === "O-O") {
             if (color === Color.Black) {
                 const king = nextState["e8"]
@@ -309,6 +330,9 @@ const historyToHistoryStates = (history: Array<string>): Array<ChessboardState> 
             }
 
             const previousPosition = getPreviousPiecePosition(result[result.length - 1], pieceComponent.name as Piece, file, rank, color, capture, previousKnownFile, previousKnownRank)
+            // if(!previousPosition.file || !previousPosition.rank) {
+            //     throw Error("missing previous position")
+            // }
             const piece = nextState[`${previousPosition.file}${previousPosition.rank}`]
             delete nextState[`${previousPosition.file}${previousPosition.rank}`]
             nextState[`${file}${rank}`] = piece
