@@ -54,20 +54,23 @@ function Chessboard({moves}: ChessboardProps) {
 
     const navigateBackward = () => {
         if (displayedMovesHistory.length > 0) {
-            setDisplayedMovesHistory(displayedMovesHistory.slice(0, -1))
+            const newDisplayedMovesHistory = displayedMovesHistory.slice(0, -1)
+            setDisplayedMovesHistory(newDisplayedMovesHistory)
+            setState(historyToHistoryStates(newDisplayedMovesHistory).pop())
         }
     }
 
     const navigateForward = () => {
         if (displayedMovesHistory.length < movesHistory.length) {
-            setDisplayedMovesHistory([...displayedMovesHistory, movesHistory[displayedMovesHistory.length]])
+            const newDisplayedMovesHistory = [...displayedMovesHistory, movesHistory[displayedMovesHistory.length]]
+            setDisplayedMovesHistory(newDisplayedMovesHistory)
+            setState(historyToHistoryStates(newDisplayedMovesHistory).pop())
         }
     }
 
-    useEffect(() => {
-        setState(historyToHistoryStates(displayedMovesHistory).pop())
-    }, [displayedMovesHistory]);
-
+    // useEffect(() => {
+    //     setState(historyToHistoryStates(displayedMovesHistory).pop())
+    // }, [displayedMovesHistory]);
 
     useEffect(() => {
         if (leftPress) {

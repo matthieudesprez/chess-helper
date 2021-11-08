@@ -31,7 +31,6 @@ export interface ChessboardCoordinates {
 }
 
 export declare type ChessboardProps = {
-    fen?: string;
     moves?: string;
 };
 
