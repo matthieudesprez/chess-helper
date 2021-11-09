@@ -428,13 +428,13 @@ export const historyToHistoryStates = (history: Array<string>): Array<Chessboard
             if (capture) {
                 hArray.pop()
             }
-            const pieceComponent = ["R", "N", "B", "K", "Q"].includes(hArray[0]) ? {
-                R: Rook,
-                N: Knight,
-                B: Bishop,
-                K: King,
-                Q: Queen,
-            }[hArray.shift()] : Pawn
+            const pieceName = ["R", "N", "B", "K", "Q"].includes(hArray[0]) ? {
+                R: Piece.Rook,
+                N: Piece.Knight,
+                B: Piece.Bishop,
+                K: Piece.King,
+                Q: Piece.Queen,
+            }[hArray.shift()] : Piece.Pawn
 
             // additional information to tell similar matches appart
             let previousKnownFile, previousKnownRank
@@ -447,12 +447,10 @@ export const historyToHistoryStates = (history: Array<string>): Array<Chessboard
                 }
             }
 
-            const previousPosition = getPreviousPiecePosition(result[result.length - 1], pieceComponent.name as Piece, file, rank, color, capture, previousKnownFile, previousKnownRank)
+            const previousPosition = getPreviousPiecePosition(result[result.length - 1], pieceName, file, rank, color, capture, previousKnownFile, previousKnownRank)
             // if(!previousPosition.file || !previousPosition.rank) {
             //     throw Error("missing previous position")
             // }
-            const piece = nextState[`${previousPosition.file}${previousPosition.rank}`]
-            delete nextState[`${previousPosition.file}${previousPosition.rank}`]
 
             if (capture && !nextState[`${file}${rank}`]) { // en passant
                 if (color === Color.White) {
@@ -462,7 +460,8 @@ export const historyToHistoryStates = (history: Array<string>): Array<Chessboard
                 }
             }
 
-            nextState[`${file}${rank}`] = piece
+            nextState[`${file}${rank}`] = nextState[`${previousPosition.file}${previousPosition.rank}`]
+            delete nextState[`${previousPosition.file}${previousPosition.rank}`]
         }
         result.push(nextState)
     })
