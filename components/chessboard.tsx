@@ -90,13 +90,14 @@ function Chessboard({moves}: ChessboardProps) {
             <div className={styles.movesHistory}>
                 {historyToMoves(displayedMovesHistory)}
             </div>
-            <div className={styles.chessboardContainer}>
+            <div className={styles.chessboardContainerContainer}>
                 <div className={styles.chessboardRowsInfo}>
                     {[8, 7, 6, 5, 4, 3, 2, 1].map((index) => (
                         <div key={index}>{index}</div>
                     ))}
                 </div>
-                <div className={styles.chessboard}>
+                <div className={styles.chessboardContainer}>
+                    <div className={styles.chessboard}>
                     {Array(64).fill(null).map((_, index) => (
                         <div key={index} className={styles.cell}>{mapIndexToInitialPiece(state, index)}</div>
                     ))}
@@ -105,6 +106,7 @@ function Chessboard({moves}: ChessboardProps) {
                     {Array(8).fill(null).map((_, index) => (
                         <div key={index}>{mapIndexToFile(index + index * 8)}</div>
                     ))}
+                </div>
                 </div>
             </div>
 

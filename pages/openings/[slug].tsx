@@ -4,7 +4,6 @@ import openings from "../../data/openings.json";
 import {getSlugFromName} from "../../utils/url";
 import Chessboard from "../../components/chessboard";
 import styles from '../../styles/Opening.module.css'
-import Link from "next/link";
 
 
 function Opening({opening}) {

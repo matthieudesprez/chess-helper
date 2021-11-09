@@ -14,6 +14,9 @@ export default function Layout({children}) {
                 <div>
                     <Link href={`/openings`}><a className={styles.navbarItem}>Openings</a></Link>
                 </div>
+            </div>
+            <main>{children}</main>
+            <div className={styles.footer}>
                 <div>
                     <Link href="https://github.com/matthieudesprez/chess-helper">
                         <a target="_blank">
@@ -22,7 +25,6 @@ export default function Layout({children}) {
                     </Link>
                 </div>
             </div>
-            <main>{children}</main>
         </>
     )
 }

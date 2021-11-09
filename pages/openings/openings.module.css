@@ -1,6 +1,6 @@
 .openings {
-    width: 640px;
-    height: 640px;
+    width: 90vw;
+    max-width: 640px;
     margin: auto;
     position: relative;
 }
@@ -14,36 +14,36 @@
 }
 
 
-.container {
-  position: relative;
+.searchContainer {
+    position: sticky;
 }
 
 .search {
-  border: 1px solid #666;
-  box-sizing: border-box;
-  font-size: 18px;
-  padding: 5px;
-  width: 100%;
+    border: 1px solid #666;
+    box-sizing: border-box;
+    font-size: 18px;
+    padding: 5px;
+    width: 100%;
 }
 
 .results {
-  list-style: none;
-  overflow: hidden;
-  margin: 9px 0 0;
-  padding: 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+    list-style: none;
+    overflow: hidden;
+    margin: 9px 0 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
 }
 
 .result {
-  background: #0070f3;
-  color: #eee;
-  margin: 0 0 9px;
-  padding: 18px;
+    background: #0070f3;
+    color: #eee;
+    margin: 0 0 9px;
+    padding: 18px;
 }
 
 .result a {
-  color: #eee;
+    color: #eee;
 }

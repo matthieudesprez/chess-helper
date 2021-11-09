@@ -38,7 +38,7 @@ function Openings({openings}) {
     return (
         <div className={styles.openings}>
             <div
-                className={styles.container}
+                className={styles.searchContainer}
                 ref={searchRef}
             >
                 <input

@@ -2,8 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
+    max-width: 640px;
     margin: auto;
+    padding: 1rem;
 }
 .navbar > div {
     display: block;
@@ -13,4 +14,12 @@
 }
 .githubIcon {
     transform: scale(1.5);
+}
+.footer {
+    display: flex;
+    place-content: end;
+    max-width: 640px;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 1rem;
 }
